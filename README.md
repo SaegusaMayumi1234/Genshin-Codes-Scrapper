@@ -20,3 +20,7 @@ Considered source list:
 - https://www.ggrecon.com/guides/genshin-impact-codes (very outdated)
 
 There is still many more source list but this is the most popular one
+
+Credits:
+
+- https://github.com/themojache/ScrapeAction (Inspiration and many parts of the code)
