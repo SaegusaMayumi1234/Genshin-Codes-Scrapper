@@ -19,10 +19,10 @@ module.exports = {
     
                 const codeList = [];
                 
-                filteredLi.each((i, el) => {
-                    const code = $(el).find('a.a-link').text().trim();
-                    const rewards = $(el).text().replace(code, '').replace('(EXPIRED)', '').trim().replace(/^-/, '').trim();
-                    const expired = $(el).text().toLowerCase().includes('expired');
+                filteredLi.each((i, li) => {
+                    const code = $(li).find('a.a-link').text().trim();
+                    const rewards = $(li).text().replace(code, '').replace('(EXPIRED)', '').trim().replace(/^-/, '').trim();
+                    const expired = $(li).text().toLowerCase().includes('expired');
 
                     codeList.push({
                         type,
