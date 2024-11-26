@@ -11,8 +11,8 @@ module.exports = {
 
             const getCodeFromSelector = (el, type) => {
                 const filteredOl = $(el).filter((i, el2) => $(el2).is('ol.a-orderedList'));
-                const filteredLi = $(filteredOl).children('li').filter((i, li) => 
-                    $(li).hasClass('a-listItem') && $(li).find('a.a-link').filter((i, link) => {
+                const filteredLi = $(filteredOl).children('li.a-listItem').filter((i, li) => 
+                    $(li).find('a.a-link').filter((i, link) => {
                         return $(link).attr('href')?.startsWith('https://genshin.hoyoverse.com/en/gift?code=');
                     }).length > 0
                 );
@@ -21,24 +21,25 @@ module.exports = {
                 
                 filteredLi.each((i, el) => {
                     const code = $(el).find('a.a-link').text().trim();
-                    const rewards = $(el).text().replace(code, '').replace('(EXPIRED)', '').trim();
-                    const expired = $(el).text().toLowerCase().includes('expired')
+                    const rewards = $(el).text().replace(code, '').replace('(EXPIRED)', '').trim().replace(/^-/, '').trim();
+                    const expired = $(el).text().toLowerCase().includes('expired');
+
                     codeList.push({
                         type,
                         code,
                         rewards,
                         expired,
-                    })
+                    });
                 });
     
                 return codeList;
-            }
+            };
     
             const normalCodes = getCodeFromSelector($("h2#hl_1").nextUntil('h2#hl_2'), 'normal');
             const livestreamCode2 = getCodeFromSelector($("h2#hl_2").nextUntil('h2#hl_3'), 'livestream');
-            return successResponse(this.url, [...normalCodes, ...livestreamCode2])
+            return successResponse(this.url, [...normalCodes, ...livestreamCode2]);
         } catch (error) {
             return errorResponse(this.url, error);
         }
     }
-}
+};
