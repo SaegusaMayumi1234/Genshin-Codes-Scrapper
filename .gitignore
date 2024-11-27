@@ -131,4 +131,5 @@ dist
 
 # project related
 config.json
-src/storages/local
+src/storages/local/*
+!src/storages/local/init.md
