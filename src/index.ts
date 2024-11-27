@@ -12,6 +12,7 @@ import logger from './utils/logger';
 import NotFound from './middlewares/notFound';
 import ErrorHandler from './middlewares/errorHandler';
 
+import './utils/validateStorages';
 import './scheduler/scrapeGenshinCodes';
 
 const __filename = fileURLToPath(import.meta.url);
