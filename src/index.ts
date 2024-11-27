@@ -12,6 +12,8 @@ import logger from './utils/logger';
 import NotFound from './middlewares/notFound';
 import ErrorHandler from './middlewares/errorHandler';
 
+import Routes from './routes/index';
+
 import './utils/validateStorages';
 import './scheduler/scrapeGenshinCodes';
 
@@ -43,7 +45,7 @@ const app: Express = express();
 
   app.use(express.static(path.join(__dirname, '/public')));
 
-  // app.use('/v1', RoutesV1);
+  app.use(Routes);
 
   app.use(NotFound);
   app.use(ErrorHandler);

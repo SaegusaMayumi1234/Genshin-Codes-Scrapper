@@ -43,11 +43,11 @@ async function start() {
   const valid = combinedCode.filter((value) => !value.expired);
   const expired = combinedCode.filter((value) => value.expired);
 
-  fs.writeFileSync('./src/storages/local/result.json', JSON.stringify(result, null, 2));
-  fs.writeFileSync('./src/storages/local/combinedResult.json', JSON.stringify(combinedCodeProcList, null, 2));
-  fs.writeFileSync('./src/storages/local/all.json', JSON.stringify(combinedCode, null, 2));
-  fs.writeFileSync('./src/storages/local/valid.json', JSON.stringify(valid, null, 2));
-  fs.writeFileSync('./src/storages/local/expired.json', JSON.stringify(expired, null, 2));
+  fs.writeFileSync('./src/storages/local/result.json', JSON.stringify(result, null, 2), 'utf8');
+  fs.writeFileSync('./src/storages/local/combinedResult.json', JSON.stringify(combinedCodeProcList, null, 2), 'utf8');
+  fs.writeFileSync('./src/storages/local/all.json', JSON.stringify(combinedCode, null, 2), 'utf8');
+  fs.writeFileSync('./src/storages/local/valid.json', JSON.stringify(valid, null, 2), 'utf8');
+  fs.writeFileSync('./src/storages/local/expired.json', JSON.stringify(expired, null, 2), 'utf8');
 }
 
 const job = new CronJob('*/5 * * * *', start);
