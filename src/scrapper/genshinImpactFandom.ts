@@ -14,7 +14,7 @@ export async function scrapperGenshinImpactFandom(): Promise<ScrapperModel> {
       .find('tr')
       .filter((i, el) => !$(el).children().first().is('th'));
 
-    const dateRegex = /((?:\d{4}-\d{2}-\d{2})|indefinite|expired)/gim;
+    const dateRegex = /((?:\d{4}-\d{2}-\d{2})|indefinite|unknown|expired)/gim;
     const now = new Date();
     const codeList: CodeModel[] = [];
 
@@ -27,7 +27,7 @@ export async function scrapperGenshinImpactFandom(): Promise<ScrapperModel> {
 
       if (status.includes('expired')) {
         expired = true;
-      } else if (status.includes('indefinite')) {
+      } else if (status[1] === 'indefinite' || status[1] === 'unknown') {
         expired = false;
       } else {
         const dateParsed = status.map((date) => new Date(date)).sort((a: any, b: any) => b - a);
