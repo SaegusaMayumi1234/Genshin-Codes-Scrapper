@@ -3,7 +3,9 @@ import fs from 'fs';
 
 import { CombinedCodeModel, ICombinedCodeProc } from '../models/genshinCodeModel';
 import { scrapperGame8 } from '../scrapper/game8';
+import { scrapperGamerant } from '../scrapper/gamerant';
 import { scrapperGenshinImpactFandom } from '../scrapper/genshinImpactFandom';
+import { scrapperPcgamesn } from '../scrapper/pcgamesn';
 import { scrapperRockpapershotgun } from '../scrapper/rockpapershotgun';
 import { scrapperVg247 } from '../scrapper/vg247';
 import logger from '../utils/logger';
@@ -12,7 +14,14 @@ async function start() {
   try {
     logger.info('Starting to Scrapping Genshin Codes');
     const now = Date.now();
-    const result = await Promise.all([scrapperGenshinImpactFandom(), scrapperGame8(), scrapperRockpapershotgun(), scrapperVg247()]);
+    const result = await Promise.all([
+      scrapperGenshinImpactFandom(),
+      scrapperGame8(),
+      scrapperRockpapershotgun(),
+      scrapperVg247(),
+      scrapperPcgamesn(),
+      scrapperGamerant(),
+    ]);
 
     // for easy and fast code indexing
     const combinedCodeProcList: ICombinedCodeProc = {};

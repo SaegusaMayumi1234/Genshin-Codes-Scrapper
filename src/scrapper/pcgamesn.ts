@@ -4,8 +4,8 @@ import request from '../utils/request';
 import { CodeModel, ScrapperModel } from '../models/genshinCodeModel';
 import logger from '../utils/logger';
 
-export async function scrapperRockpapershotgun(): Promise<ScrapperModel> {
-  const scrapperModel = new ScrapperModel('https://www.rockpapershotgun.com/genshin-impact-codes-list');
+export async function scrapperPcgamesn(): Promise<ScrapperModel> {
+  const scrapperModel = new ScrapperModel('https://www.pcgamesn.com/genshin-impact/codes-redeem-promo');
   try {
     const data = await request.getSiteData(scrapperModel.url);
     const $ = cheerio.load(data);
@@ -20,7 +20,7 @@ export async function scrapperRockpapershotgun(): Promise<ScrapperModel> {
 
       filteredLi.each((i, li) => {
         const code = $(li).find('strong').first().text().trim();
-        const rewards = $(li).text().replace(code, '').trim().replace(/^:/, '').trim();
+        const rewards = $(li).text().replace(code, '').trim().replace(/^[-–]/, '').trim();
         const expired = false;
 
         codeList.push({
@@ -34,8 +34,9 @@ export async function scrapperRockpapershotgun(): Promise<ScrapperModel> {
       return codeList;
     };
 
-    const normalCodes = getCodeFromSelector($('.article_body h2#section-1').nextUntil('.article_body h2#section-6'), 'normal');
-    const livestreamCode = getCodeFromSelector($('.article_body h2#section-6').nextUntil('.article_body h2#section-2'), 'livestream');
+    const normalCodes = getCodeFromSelector($('.entry-content h2:nth-of-type(1)').nextUntil('.entry-content h2:nth-of-type(2)'), 'normal');
+    const livestreamCode = getCodeFromSelector($('.entry-content h2:nth-of-type(2)').nextUntil('.entry-content h3:nth-of-type(1)'), 'livestream');
+
     scrapperModel.success = true;
     scrapperModel.codes = [...normalCodes, ...livestreamCode];
   } catch (error: any) {

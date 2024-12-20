@@ -19,7 +19,7 @@ export async function scrapperVg247(): Promise<ScrapperModel> {
       const codeList: CodeModel[] = [];
 
       filteredLi.each((i, li) => {
-        const code = $(li).find('strong').text().trim();
+        const code = $(li).find('strong').first().text().trim();
         const rewards = $(li).text().replace(code, '').trim().replace(/^:/, '').trim();
         const expired = false;
 

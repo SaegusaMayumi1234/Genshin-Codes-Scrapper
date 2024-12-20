@@ -6,11 +6,11 @@ implemented source list:
 - https://game8.co/games/Genshin-Impact/archives/304759
 - https://www.rockpapershotgun.com/genshin-impact-codes-list
 - https://www.vg247.com/genshin-impact-codes
+- https://www.pcgamesn.com/genshin-impact/codes-redeem-promo
+- https://gamerant.com/genshin-impact-redeem-code-livestream-codes-free-primogem-redemption
 
 Considered source list:
 
-- https://www.pcgamesn.com/genshin-impact/codes-redeem-promo (might implement, waiting for next livestream for updated page)
-- https://gamerant.com/genshin-impact-redeem-code-livestream-codes-free-primogem-redemption (might implement, waiting for next livestream for updated page)
 - https://www.pockettactics.com/genshin-impact/codes (cloudflare blocked)
 - https://ucngame.com/codes/genshin-impact-codes (cloudflare blocked, expired definition not clear or working list not up to date)
 - https://progameguides.com/genshin-impact/genshin-impact-codes (expired definition not clear or working list not up to date)
