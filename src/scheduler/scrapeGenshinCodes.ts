@@ -43,6 +43,9 @@ async function start() {
           if (!combinedCodeProcList[code.code].urlSources.includes(site.url)) {
             combinedCodeProcList[code.code].urlSources.push(site.url);
           }
+          if (combinedCodeProcList[code.code].type === 'normal' && code.type === 'livestream') {
+            combinedCodeProcList[code.code].type = 'livestream';
+          }
         }
       }
     }
