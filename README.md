@@ -6,8 +6,8 @@ implemented source list:
 - https://game8.co/games/Genshin-Impact/archives/304759
 - https://www.rockpapershotgun.com/genshin-impact-codes-list
 - https://www.vg247.com/genshin-impact-codes
-- https://www.pcgamesn.com/genshin-impact/codes-redeem-promo
-- https://gamerant.com/genshin-impact-redeem-code-livestream-codes-free-primogem-redemption
+- https://www.pcgamesn.com/genshin-impact/codes-redeem-promo (might not working due to cloudflare blocked)
+- https://gamerant.com/genshin-impact-redeem-code-livestream-codes-free-primogem-redemption (might not working due to anti bot protection)
 
 Considered source list:
 
