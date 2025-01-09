@@ -71,7 +71,7 @@ There is still many more source list but this is the most popular one. Feel free
 
    - **env**: The environment the application is running in. For example, `development` or `production`.
    - **port**: The port on which the API will be hosted. Default is `3000`.
-   - **proxied**: Indicates whether the app is running behind a proxy. Set to `true` if a proxy is used.
+   - **proxied**: Indicates whether the app is running behind a proxy. Set to number if a proxy is used based on how many proxy is set up.
    - **enabledSites**: A list of websites to scrape for Genshin Impact codes. Set `true` to enable scraping from a site or `false` to disable it.
    - **schedulers**: Defines the cron schedule for scraping tasks. The example `"*/5 * * * *"` runs the task every 5 minutes.
 
