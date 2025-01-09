@@ -26,7 +26,7 @@ async function start() {
     logger.info('Starting to Scrapping Genshin Codes');
     const now = Date.now();
 
-    const scrapperList = Object.entries(config.enabledSite)
+    const scrapperList = Object.entries(config.enabledSites)
       .filter(([site, isEnabled]) => isEnabled && scrappers[site])
       .map(([site]) => scrappers[site]());
 
@@ -81,7 +81,7 @@ async function start() {
   }
 }
 
-const job = new CronJob('*/5 * * * *', start);
+const job = new CronJob(config.schedulers.scrapeGenshinCodes, start);
 
 (async () => {
   await start();
