@@ -2,26 +2,35 @@ import { CronJob } from 'cron';
 import fs from 'fs';
 
 import { CombinedCodeModel, ICombinedCodeProc } from '../models/genshinCodeModel';
+import { Scrappers } from '../models/scrapperModel';
 import { scrapperGame8 } from '../scrapper/game8';
 import { scrapperGamerant } from '../scrapper/gamerant';
 import { scrapperGenshinImpactFandom } from '../scrapper/genshinImpactFandom';
 import { scrapperPcgamesn } from '../scrapper/pcgamesn';
 import { scrapperRockpapershotgun } from '../scrapper/rockpapershotgun';
 import { scrapperVg247 } from '../scrapper/vg247';
+import config from '../config/config';
 import logger from '../utils/logger';
+
+const scrappers: Scrappers = {
+  genshinImpactFandom: scrapperGenshinImpactFandom,
+  game8: scrapperGame8,
+  rockpapershotgun: scrapperRockpapershotgun,
+  vg247: scrapperVg247,
+  pcgamesn: scrapperPcgamesn,
+  gamerant: scrapperGamerant,
+};
 
 async function start() {
   try {
     logger.info('Starting to Scrapping Genshin Codes');
     const now = Date.now();
-    const result = await Promise.all([
-      scrapperGenshinImpactFandom(),
-      scrapperGame8(),
-      scrapperRockpapershotgun(),
-      scrapperVg247(),
-      scrapperPcgamesn(),
-      scrapperGamerant(),
-    ]);
+
+    const scrapperList = Object.entries(config.enabledSite)
+      .filter(([site, isEnabled]) => isEnabled && scrappers[site])
+      .map(([site]) => scrappers[site]());
+
+    const result = await Promise.all(scrapperList);
 
     // for easy and fast code indexing
     const combinedCodeProcList: ICombinedCodeProc = {};
