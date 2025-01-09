@@ -20,7 +20,7 @@ export async function scrapperRockpapershotgun(): Promise<ScrapperModel> {
 
       filteredLi.each((i, li) => {
         const code = $(li).find('strong').first().text().trim();
-        const rewards = $(li).text().replace(code, '').trim().replace(/^:/, '').trim();
+        const rewards = $(li).text().replace(code, '').replace('(NEW)', '').trim().replace(/^:/, '').trim();
         const expired = false;
 
         codeList.push({
