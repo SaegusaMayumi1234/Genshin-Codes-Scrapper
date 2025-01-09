@@ -13,7 +13,7 @@ const configSchema = Joi.object()
       vg247: Joi.boolean().required(),
       pcgamesn: Joi.boolean().required(),
       gamerant: Joi.boolean().required(),
-    }),
+    }).required(),
   })
   .unknown();
 
