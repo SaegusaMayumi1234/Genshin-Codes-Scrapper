@@ -18,7 +18,10 @@ const configSchema = Joi.object()
       gamerant: Joi.boolean().required(),
     }).required(),
     schedulers: Joi.object({
-      scrapeGenshinCodes: Joi.string().pattern(cronExpressionRegex).message('"scrapeGenshinCodes" contains an invalid cron expression value').required(),
+      scrapeGenshinCodes: Joi.string()
+        .pattern(cronExpressionRegex)
+        .message('"scrapeGenshinCodes" contains an invalid cron expression value')
+        .required(),
     }).required(),
   })
   .unknown();
