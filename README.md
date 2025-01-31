@@ -22,11 +22,11 @@ Sources|Working List|Up To Date|Bot Protection|Implemented
 |[gamerant.com](https://gamerant.com/genshin-impact-redeem-code-livestream-codes-free-primogem-redemption)|Separated nicely|✅|Unknown|✅
 |[www.pockettactics.com](https://www.pockettactics.com/genshin-impact/codes)|Separated nicely|✅|Cloudflare|❌
 |[ucngame.com](https://ucngame.com/codes/genshin-impact-codes)|Not separated|✅|Cloudflare|❌
-|[progameguides.com](https://progameguides.com/genshin-impact/genshin-impact-codes)|Separated but sometimes it mixed|✅|None|❌
-|[www.gamesradar.com](https://www.gamesradar.com/genshin-impact-codes-redeem)|Separated but sometimes it mixed|Some might outdated|None|❌
+|[progameguides.com](https://progameguides.com/genshin-impact/genshin-impact-codes)|Separated but sometimes it mixed|Some might outdated|None|❌
+|[www.gamesradar.com](https://www.gamesradar.com/genshin-impact-codes-redeem)|Separated but sometimes it mixed|✅|None|❌
 |[www.pocketgamer.com](https://www.pocketgamer.com/genshin-impact/codes)|Separated but livestream code is not|✅|None|❌
-|[www.pocketgamer.com](https://gamewith.net/genshin-impact/article/show/22737)|Really confusing|✅|None|❌
-|[www.pocketgamer.com](https://www.ggrecon.com/guides/genshin-impact-codes)|Not really good separation|Very outdated|None|❌
+|[gamewith.net](https://gamewith.net/genshin-impact/article/show/22737)|Really confusing|✅|None|❌
+|[www.ggrecon.com](https://www.ggrecon.com/guides/genshin-impact-codes)|Not really good separation|Very outdated|None|❌
 
 There is still many more source list but this is the most popular one. Feel free to add many more list by contributing to this project.
 
