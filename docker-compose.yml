@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: genshin-codes-scrapper
+    build: .
+    image: genshin-codes-scrapper:latest
+    network_mode: host
+    environment:
+      NODE_ENV: production
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+    command: yarn start
