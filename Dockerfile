@@ -8,8 +8,8 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-# Build the project (creates ./dist)
-RUN yarn build
-
 # Copy app source
 COPY . .
+
+# Build the project (creates ./dist)
+RUN yarn build
