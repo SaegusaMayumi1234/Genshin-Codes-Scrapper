@@ -5,7 +5,7 @@ FROM node:22
 WORKDIR /usr/src/app
 
 # Copy package files and install deps
-COPY app/package.json app/yarn.lock ./
+COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 # Build the project (creates ./dist)
