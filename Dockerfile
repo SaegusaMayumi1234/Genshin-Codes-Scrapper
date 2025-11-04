@@ -1,5 +1,5 @@
 # Use official Node 22 LTS image
-FROM node:22
+FROM node:22-slim
 
 # Set working directory
 WORKDIR /usr/src/app
